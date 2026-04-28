@@ -1,0 +1,20 @@
+1. Navigate to https://www.tutorialspoint.com/selenium/practice/text-box.php
+
+package seleniumassignment;
+
+import org.openqa.selenium.WebDriver;
+import org.openqa.selenium.chrome.ChromeDriver;
+
+public class Navigate {
+
+	public static void main(String[] args) {
+		
+		WebDriver driver = new ChromeDriver();
+		driver.get("https://www.tutorialspoint.com/selenium/practice/text-box.php");
+	}
+}
+
+
+2. Enter the details in text fields  and submit using selenium code.
+
+
