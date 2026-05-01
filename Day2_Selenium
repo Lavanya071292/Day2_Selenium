@@ -1,4 +1,5 @@
 1. Navigate to https://www.tutorialspoint.com/selenium/practice/text-box.php
+2. Enter the details in text fields  and submit using selenium code.
 
 package seleniumassignment;
 
@@ -10,11 +11,35 @@ public class Navigate {
 	public static void main(String[] args) {
 		
 		WebDriver driver = new ChromeDriver();
-		driver.get("https://www.tutorialspoint.com/selenium/practice/text-box.php");
+
+	        // Open the page
+	        driver.get("https://www.tutorialspoint.com/selenium/practice/text-box.php");
+	        driver.manage().window().maximize();
+
+	        //To find or locate a Webelement
+	        WebElement FullName=driver.findElement(By.id("fullname"));
+			
+			//Type the username in textfield
+			FullName.sendKeys("Jeshvik");
+			WebElement Email=driver.findElement(By.id("email"));
+			
+		
+			Email.sendKeys("jeshvik@gmail.com");
+			WebElement Address=driver.findElement(By.id("address"));
+			
+			Address.sendKeys("No 32A,Elango Street, Moorthy Nagar, Sakthi Nagar, Padi, Chennai - 600075");
+			WebElement passWord=driver.findElement(By.cssSelector("input#password"));
+			
+			passWord.sendKeys("Jesh@18");
+		    System.out.println(passWord.getAttribute("value"));
+		    WebElement Submit = driver.findElement(RelativeLocator.with(By.tagName("input")).below(passWord));
+		    Submit.click();
+		    Thread.sleep(2000);
+		    driver.close();
+	   }
 	}
-}
 
 
-2. Enter the details in text fields  and submit using selenium code.
+
 
 
